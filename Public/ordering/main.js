@@ -38,7 +38,7 @@ const router = new VueRouter({
 Vue.prototype.publicHttp = (obj = {}, method, url, callback) => {
     Vue.axios({
         method: method,
-        url: '/Home'+url,
+        url: '/ordering/Home'+url,
         data: qs.stringify(obj)
     }).then((res) => {
         callback(res);
