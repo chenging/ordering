@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <input id="paste" placeholder="粘贴"> -->
+    <!-- <div>hello world</div> -->
+    <!-- <div id="div1" style="width:100px;height:100px;border:1px solid red;"></div> -->
+    <!-- <div style="width:200px;height:20px;border:1px solid red;display: flex;justify-content:space-between"><span>Canvas绘制弧线</span><span>入门示例</span></div> -->
+    <!-- <form action="study.php" method="post" enctype="multipart/form-data">
+        <label for="file">文件名：</label>
+        <input type="file" name="file" id="file">
+        <br>
+        <input type="submit" name="submit" value="提交">
+    </form> -->
+    <!-- <button id="loginBtn">登录</button> -->
+    <div style="position:absolute;background:blue;" id="div">我是div</div>
+</body>
+<script>
+    // var paste = document.getElementById('paste');
+    // paste.onpaste = function (e) {
+
+    // }
+    // var appendDiv = function () {
+    //     for (var i = 0; i < 100; i++) {
+    //         var div = document.createElement('div');
+    //         div.style.width='30px';
+    //         div.style.height='30px';
+    //         div.style.border='1px solid red';
+    //         div.innerHTML = i;
+    //         div.style.cssFloat='left';
+    //         div.style.margin='20px 20px';
+    //         document.body.appendChild(div);
+    //     }
+    // };
+    // appendDiv();
+    // class Animal{
+    //     constructor(name){
+    //         this.name=name;
+    //     }
+    //     getName(){
+    //         return this.name;
+    //     }
+    // }
+    // class Dog extends Animal{
+    //     constructor(name){
+    //         super(name);
+    //     }
+    //     sayName(sound){
+    //         return sound;
+    //     }
+    // }
+    // let dog=new Dog('史努比');
+    // console.log(dog.getName()+'叫起来是这样的'+dog.sayName('汪汪汪'));
+    // function Animal(name){
+    //     this.name=name;
+    // }
+    // Animal.prototype.getName=function(){
+    //     return this.name;
+    // }
+    // var dog=new Animal('史努比');
+    // dog.sayName=function(sound){
+    //     return sound;
+    // }
+    // console.log(dog.getName()+'另外一种叫法'+dog.sayName('哈哈哈'));
+    // var name='globalName';
+    // var getName=function(){
+    //     this.name='hhe';
+    //     console.log(this.name);
+    // }
+    // getName();
+    // window.name='globalName';
+    // var obj={
+    //     name:'areaName',
+    //     getName:function(){
+    //         return this.name;
+    //     }
+    // }
+    // var curName=obj.getName;
+    // obj.sayName=()=>{
+    //     return this.name;
+    // }
+    // console.log(obj.getName());//areaName,对象属性访问,this指向obj
+    // console.log(curName());//globalName,obj.getName普通函数调用，改变了this的指向,此时this指向window
+    // console.log(curName.call(obj));//areaName,非箭头函数下，call方法改变this指向，从window到指向obj
+    // console.log(obj.sayName());//globalName，箭头函数自身没有this,通过捕获上下文this为自身this，即window
+    // console.log(obj.sayName.call(obj));//globalName,call无法改变箭头函数this指向
+    // var MyClass=function(){
+    //     this.name='seven';
+    //     return this;
+    // }
+    // var obj=new MyClass();
+    // console.log(obj);
+    // document.getElementById('div1').onclick=function(){
+    //     var func=function(){
+    //         console.log(this.id)
+    //     }
+    //     func.call(this);
+    // }
+    //单例模式
+    // var CreateDiv=(function(){
+    //     var instance;
+    //     var CreateDiv=function(html){
+    //         if(instance){
+    //             return instance;
+    //         }
+    //         this.html=html;
+    //         this.init();
+    //         return instance=this;
+    //     }
+    //     CreateDiv.prototype.init=function(){
+    //         var div=document.createElement('div');
+    //         div.innerHTML=this.html;
+    //         div.style.width='100px';
+    //         div.style.height='100px';
+    //        div.style.border='1px solid red';
+    //         document.body.appendChild(div);
+    //     }
+    //     return CreateDiv;
+    // }())
+    // var a=new CreateDiv('sevn1');
+    // var b=new CreateDiv('sevn2');
+    // console.log(a===b);
+    // var loginLayer = (function () {
+    //     var div = document.createElement('div');
+    //     div.innerHTML = '我是登录浮窗';
+    //     div.style.width = '100px';
+    //     div.style.height = '100px';
+    //     div.style.border = '1px solid red';
+    //     div.style.display = 'none';
+    //     document.body.appendChild(div);
+    //     return div;
+    // })();
+    // document.getElementById('loginBtn').onclick = function () {
+    //     loginLayer.style.display = 'block';
+    // }
+    // var createLoginLayer=(function(){
+    //     var div;
+    //     return function(){
+    //         if(!div){
+    //             div=document.createElement('div');
+    //             div.innerHTML='我是登录浮窗';
+    //             div.style.display='none';
+    //             document.body.appendChild(div);
+    //         }
+    //         return  div;
+    //     }
+    // })();
+    // document.getElementById('loginBtn').onclick=function(){
+    //     var loginLayer=createLoginLayer();
+    //     loginLayer.style.display='block';
+    // }
+    // var stargies={
+    //     'S':function(bouns){
+    //         return bouns*4;
+    //     },
+    //     'A':function(bouns){
+    //         return bouns*3;
+    //     },
+    //     'B':function(bouns){
+    //         return bouns*2;
+    //     }
+    // }
+    // var caculateBouns=function(level,bouns){
+    //     return stargies[level](bouns);
+    // }
+    // console.log(caculateBouns('A',6000));
+    // var tween = {
+    //     linear: function (t, b, c, d) {
+    //         return c * t / d + b;
+    //     },
+    //     easeIn: function (t, b, c, d) {
+    //         return c * (t /= d) * t + b;
+    //     },
+    //     strongEaseIn: function (t, b, c, d) {
+    //         return c * (t /= d) * t * t * t * t + b;
+    //     },
+    //     strongEaseOut: function (t, b, c, d) {
+    //         return c * ((t = t / d - 1) * t * t * t * t + 1) + b;
+    //     },
+    //     sineaseIn: function (t, b, c, d) {
+    //         return c * (t /= d) * t * t + b;
+    //     },
+    //     sineaseOut: function (t, b, c, d) {
+    //         return c * ((t = t / d - 1) * t * t + 1) + b;
+    //     }
+    // };
+    // var Animate=function(dom){
+    //     this.dom=dom;
+    //     this.startTime=0;
+    //     this.startPos=0;
+    //     this.endPos=0;
+    //     this.propertyName=null;
+    //     this.easing=null;
+    //     this.duration=null;
+    // }
+    // Animate.prototype.start=function(propertyName,endPos,duration,easing){
+    //     this.startTime= +new Date();
+    //     this.startPos=this.dom.getBoundingClientRect()[ propertyName ];
+    //     this.propertyName=propertyName;
+    //     this.endPos=endPos;
+    //     this.easing=tween[easing];
+    //     var self=this;
+    //     var timeId=setInterval(function(){
+    //         if(self.step()===false){
+    //             clearInterval(timeId);
+    //         }
+    //     },19)
+    // }
+    // Animate.prototype.step=function(){
+    //     var t=+new Date();
+    //     if(t>=this.startTime+this.duration){
+    //         this.update(this.endPos);
+    //         return false;
+    //     }
+    //     var pos=this.easing(t-this.startTime,this.startPos,this.endPos-this.startPos,this.duration);
+    //     this.update(pos);
+    // }
+    // Animate.prototype.update=function(pos){
+    //     this.dom.style[this.propertyName]=pos+'px';
+    // }
+    // var div=document.getElementById('div');
+    // var animate=new Animate(div);
+    // animate.start('left',500,1000,'linear');
+</script>
+
+</html>

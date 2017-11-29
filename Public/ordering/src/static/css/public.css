@@ -1,0 +1,27 @@
+html,
+body,
+div,
+h5,
+h6,
+p,
+ul,
+li {
+    margin: 0px;
+    padding: 0px;
+}
+
+[v-cloak] {
+    display: none;
+}
+
+body {
+    background: #fff;
+    font-size: 16px;
+}
+
+a,
+button,
+input,
+textarea {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
